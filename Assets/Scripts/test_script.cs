@@ -2,16 +2,9 @@
 using System.Collections;
 
 // A test script to see how merge conflicts are handled
+// Making various changes to things
 
 public class test_script : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	// erased functions and replaced them with this comment
 }
