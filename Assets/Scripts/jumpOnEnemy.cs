@@ -14,7 +14,6 @@ public class jumpOnEnemy : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D col) {
-		Debug.Log ("NIGGER");
 		if (col.gameObject.tag == "enemy") {
 			Destroy (col.gameObject);
 		}

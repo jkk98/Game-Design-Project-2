@@ -22,7 +22,7 @@ public class DinoScript : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col) {
 		//Debug.Log (col.gameObject.tag);
-		if (col.gameObject.tag == "environment") {
+		if (col.gameObject.tag == "environment" || col.gameObject.name.Contains("stairs")) {
 			Flip ();
 		}
 	}

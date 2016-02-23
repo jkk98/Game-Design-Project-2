@@ -15,8 +15,8 @@ public class EggScript : MonoBehaviour {
 	public LayerMask whatIsGround;
 	public float jumpForce = .5f;
 	public bool isPunching = false;
-	public float egg_speed = 1;
-	public GameObject egg_shot;
+	public float egg_speed = 2400;
+	public Rigidbody2D egg_shot;
 
 	public LayerMask whatIsEnemy;
 
@@ -54,20 +54,30 @@ public class EggScript : MonoBehaviour {
 
 		if (punchStage > 0) {
 			punchStage += 1;
-			if (punchStage >= 12 && !Input.GetKey (KeyCode.Return)) {
+			if (punchStage >= 8 && !Input.GetKey (KeyCode.Return) && isPunching == true) {
 				punchStage = 0;
 				isPunching = false;
 				anim.SetBool ("isCharging", false);
 				anim.SetBool ("isPunching", false);
-			} else if (punchStage >= 30 && !Input.GetKey (KeyCode.Return) && isPunching == true) {
-				Debug.Log ("ASS");
+			} else if (punchStage >= 30 && !Input.GetKey (KeyCode.Return)) {
 				anim.SetBool ("isCharging", false);
-				GameObject shot_egg = (GameObject) Instantiate (egg_shot, transform.position, transform.rotation);
+				Rigidbody2D shot_egg;
+				if (facingRight) {
+					shot_egg = Instantiate (egg_shot, new Vector3(transform.position.x+.01f,transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
+					shot_egg.velocity = new Vector2 (egg_speed, 0);
+				} else {
+					shot_egg = Instantiate (egg_shot, new Vector3(transform.position.x-.01f,transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
+					shot_egg.velocity = new Vector2 (-egg_speed, 0);
+				}
+
 				punchStage = 0;
 				isPunching = false;
-			} else if (punchStage > 12 && Input.GetKey (KeyCode.Return)) {
+				anim.SetBool ("isPunching", false);
+			} else if (punchStage > 8 && Input.GetKey (KeyCode.Return)) {
 				anim.SetBool ("isCharging", true);
+				isPunching = false;
 			}
+			Debug.Log (punchStage);
 		}
 		if (grounded && Input.GetKeyDown (KeyCode.Space)) {
 			anim.SetBool ("Ground", false);
@@ -87,7 +97,7 @@ public class EggScript : MonoBehaviour {
 			Debug.Log ("STOMP");
 			Destroy (col.gameObject);
 			anim.SetBool ("Ground", false);
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 800));
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 400));
 			jumpedOnEnemy = false;
 		}
 		else if (col.gameObject.tag == "enemy" && isPunching) {
