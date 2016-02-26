@@ -25,7 +25,7 @@ public class CameraFollow : MonoBehaviour {
 			Vector3 objectPos = obj.transform.position;
 			float distanceSqr = (objectPos - new Vector3(transform.position.x,objectPos.y,transform.position.z)).sqrMagnitude;
 
-			if (distanceSqr < nearestDistanceSqr) {
+			if (distanceSqr < nearestDistanceSqr && obj.transform.position.y < player.transform.position.y) {
 				nearestObj = obj.transform;
 				nearestDistanceSqr = distanceSqr;
 			}
@@ -38,7 +38,7 @@ public class CameraFollow : MonoBehaviour {
 		float floorHeight = findFloorHeight ();
 		if (player) {
 			if (player.transform.position.y > floorHeight) {
-				this.transform.position = new Vector3 (player.transform.position.x + offset.x, player.transform.position.y + .765f, offset.z);
+				this.transform.position = new Vector3 (player.transform.position.x + offset.x, player.transform.position.y +offset.y, offset.z);
 			} else {
 				this.transform.position = new Vector3 (player.transform.position.x + offset.x, 0 + offset.y, offset.z);
 			}

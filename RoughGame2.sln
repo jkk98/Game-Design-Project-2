@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{B5DE0ACC-0495-BF3C-6E4A-54524F7590DA}") = "RoughGame2", "Assembly-CSharp.csproj", "{23616E8F-8DEB-5743-E765-0B8328CA93EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23616E8F-8DEB-5743-E765-0B8328CA93EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23616E8F-8DEB-5743-E765-0B8328CA93EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23616E8F-8DEB-5743-E765-0B8328CA93EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23616E8F-8DEB-5743-E765-0B8328CA93EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

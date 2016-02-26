@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class EggScript : MonoBehaviour {
@@ -16,13 +17,16 @@ public class EggScript : MonoBehaviour {
 	public float jumpForce = .5f;
 	public bool isPunching = false;
 	public float egg_speed = 2400;
+	public int hp = 10;
 	public Rigidbody2D egg_shot;
 
 	public LayerMask whatIsEnemy;
+	UnityEngine.UI.Slider hpSlider;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
+		hpSlider = GameObject.Find ("hp_slider").GetComponent<Slider>();
 	}
 	
 	// Update is called once per frame
@@ -100,9 +104,16 @@ public class EggScript : MonoBehaviour {
 			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 400));
 			jumpedOnEnemy = false;
 		}
+		else if (col.gameObject.name.Contains( "apato_head_trap")) {
+			return;
+		}
 		else if (col.gameObject.tag == "enemy" && isPunching) {
 			Destroy (col.gameObject);
 		} else if (col.gameObject.tag == "enemy" && !isPunching) {
+			hp -= 1;
+		}
+		hpSlider.value = hp;
+		if (hp == 0) {
 			Destroy (gameObject);
 		}
 	}

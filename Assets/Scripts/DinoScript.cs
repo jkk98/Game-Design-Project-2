@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DinoScript : MonoBehaviour {
 	bool facingRight = true;
-	float move = -.75f;
+	public float move = -.75f;
 	Vector3 walkAmount;
 
 
@@ -22,7 +22,7 @@ public class DinoScript : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col) {
 		//Debug.Log (col.gameObject.tag);
-		if (col.gameObject.tag == "environment" || col.gameObject.name.Contains("stairs")) {
+		if (col.gameObject.tag == "environment" || col.gameObject.name.Contains("stairs") || col.gameObject.tag == "enemy") {
 			Flip ();
 		}
 	}
