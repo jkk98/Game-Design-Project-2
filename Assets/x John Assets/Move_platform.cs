@@ -3,7 +3,7 @@ using System.Collections;
 
 /* Takes a platform with a Slider Joint 2D and allows for it to move and back and 
  * forth between the upper and lower limits. It is recommended that the initial motor speed
- * is set to a positive number. There must also be a workable difference between the lower and 
+ * is set to a positive number if possible. There must also be a workable difference between the lower and 
  * upper limits. Also make sure there is a high amount of friction on horizontal platforms and 
  * be wary of the repercusions from collisions with other rigid bodies.
 */
@@ -23,9 +23,15 @@ public class Move_platform : MonoBehaviour {
 		// Starts out by getting the initial goal limit
 		switch (slider.limitState) {
 
-			// Sets the default goal limit to the upper limit
-			case JointLimitState2D.Inactive:
+			// Sets the default goal limit to the upper limit if the motor speed is positive
+			// else it sets it to the lower limit
+		case JointLimitState2D.Inactive:
+			
+			if (slider.motor.motorSpeed > 0) {
 				goal_limit = JointLimitState2D.UpperLimit;
+			} else {
+				goal_limit = JointLimitState2D.LowerLimit;
+			}
 				break;
 			
 			case JointLimitState2D.UpperLimit:
