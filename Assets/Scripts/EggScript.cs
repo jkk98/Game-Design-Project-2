@@ -108,24 +108,34 @@ public class EggScript : MonoBehaviour {
 		}
 	}
 
+    public void damagePlayer()
+    {
+        hp -= 1;
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(-300, 300));
+        hpSlider.value = hp;
+        if (hp == 0)
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
 	void OnCollisionEnter2D (Collision2D col) {
 
 		jumpedOnEnemy = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsEnemy);
         if(col.gameObject.tag == "boss")
         {
-            hp -= 1;
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(-300, 300));
+            damagePlayer();
         }
 		if (jumpedOnEnemy == true && !col.gameObject.name.Contains("tricera_truck") && coolDown == false) {
             if (col.gameObject.name.Contains("parasaurolophus") && col.gameObject.GetComponent<paraScript> ().electric) {
-				hp -= 1;
-				GetComponent<Rigidbody2D>().AddForce(new Vector2(-300, 300));
+                damagePlayer();
 			} else {
-				Destroy (col.gameObject);
-				anim.SetBool ("Ground", false);
-				GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300));
-				jumpedOnEnemy = false;
-			}
+                Destroy(col.gameObject);
+                anim.SetBool("Ground", false);
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300));
+                jumpedOnEnemy = false;
+            }
 			coolDown = true;
 		}
 		else if (col.gameObject.name.Contains( "apato_head_trap")) {
@@ -134,20 +144,14 @@ public class EggScript : MonoBehaviour {
 		}
 		else if ((col.gameObject.tag == "enemy") && isPunching && coolDown == false) {
 			if (col.gameObject.name.Contains ("parasaurolophus") && col.gameObject.GetComponent<paraScript> ().electric) {
-				hp -= 1;
-				GetComponent<Rigidbody2D>().AddForce(new Vector2(-300, 300));
+                damagePlayer();
 			} else {
 				Destroy (col.gameObject);
 			}
 			coolDown = true;
 		} else if ((col.gameObject.tag == "enemy" || col.gameObject.tag == "truck") && !isPunching && coolDown == false) {
-			hp -= 1;
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(-300, 300));
+            damagePlayer();
 			coolDown = true;
-		}
-		hpSlider.value = hp;
-		if (hp == 0) {
-			Destroy (gameObject);
 		}
 	}
 

@@ -25,7 +25,7 @@ public class egg_collision : MonoBehaviour {
 			Destroy (col.gameObject);
 			Destroy (gameObject);
 		}
-		else if (col.gameObject.CompareTag("environment")) {
+		else if (col.gameObject.CompareTag("environment") || col.gameObject.CompareTag("boss")) {
 			Destroy (gameObject);
 		}
 	}

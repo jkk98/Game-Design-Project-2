@@ -33,7 +33,7 @@ public class DinoScript : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col) {
 		if (col.gameObject.tag == "environment" || col.gameObject.name.Contains("stairs") || col.gameObject.tag == "enemy" ||
-            col.gameObject.name.Contains("edge")) {
+            col.gameObject.name.Contains("edge") || (gameObject.GetComponent<Rigidbody2D>().gravityScale == 0 && col.gameObject.tag == "platform")) {
             if(shouldWait == true)
             {
                 return;

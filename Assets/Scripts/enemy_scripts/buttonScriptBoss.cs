@@ -27,12 +27,14 @@ public class buttonScriptBoss : MonoBehaviour
             if (col.gameObject.name.Contains("Character"))
             {
                 col.gameObject.GetComponent<EggScript>().hp += 1;
+                col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300));
             }
             Destroy(gameObject);
             transform.parent.gameObject.GetComponent<robo_raptor_boss_script>().hp -= 1;
             if (transform.parent.gameObject.GetComponent<robo_raptor_boss_script>().hp == 0)
             {
-                Destroy(transform.parent.gameObject);
+                Debug.Log("ITS KILL!");
+                //Destroy(transform.parent.gameObject);
             }
         }
     }

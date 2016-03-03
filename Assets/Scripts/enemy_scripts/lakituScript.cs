@@ -5,7 +5,6 @@ public class lakituScript : MonoBehaviour {
 
 	public GameObject player;
 	bool facingRight = true;
-	Animator anim;
 	public float move = -.75f;
 	Vector3 walkAmount;
 
@@ -17,7 +16,6 @@ public class lakituScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent<Animator> ();
 
 	}
 

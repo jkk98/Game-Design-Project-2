@@ -10,8 +10,6 @@ public class truck_script : MonoBehaviour
     int wait = 10;
     bool shouldWait = false;
 
-    bool hit = false;
-
 
     // Use this for initialization
     void Start()

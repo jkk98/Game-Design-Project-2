@@ -28,8 +28,8 @@ public class oviraptor_script : MonoBehaviour
         if (ticks % 60 == 14 && shootEgg == true)
         {
             Rigidbody2D shot_egg;
-            if (facingRight) { shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x + .5f, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D; }
-            else { shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x - .5f, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D; }
+            if (facingRight) { shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x + .5f, transform.position.y + .1f, transform.position.z), transform.rotation) as Rigidbody2D; }
+            else { shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x - .5f, transform.position.y + .1f, transform.position.z), transform.rotation) as Rigidbody2D; }
             shot_egg.velocity = new Vector2(egg_speed, 0);
 
         } else if(ticks % 60 >= 14 && shootEgg == true)

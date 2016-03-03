@@ -6,8 +6,6 @@ public class CameraFollow : MonoBehaviour {
 	public GameObject player;
 	public Vector3 offset;
 
-	int maxY = 0;
-
 	// Use this for initialization
 	void Start () {
 	

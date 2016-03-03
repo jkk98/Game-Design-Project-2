@@ -3,7 +3,6 @@ using System.Collections;
 
 public class paraScript : MonoBehaviour {
 	bool facingRight = true;
-	Animator anim;
 	public bool electric = false;
 	public float move = -.75f;
 	Vector3 walkAmount;
@@ -16,7 +15,6 @@ public class paraScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent<Animator> ();
 
 	}
 
@@ -33,7 +31,7 @@ public class paraScript : MonoBehaviour {
             }
         }
         ticks += 1;
-		if (ticks % 192 >= 96) {
+		if (ticks % 160 >= 80) {
 			electric = true;
 		} else {
 			electric = false;
