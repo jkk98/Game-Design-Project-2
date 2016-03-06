@@ -4,7 +4,7 @@ using System.Collections;
 
 public class EggScript : MonoBehaviour {
 	public float maxSpeed = .5f;
-	bool facingRight = true;
+	int facingRight = 1;
 	bool coolDown = false;
 
 	Animator anim;
@@ -14,7 +14,7 @@ public class EggScript : MonoBehaviour {
 	bool grounded = false;
 	bool jumpedOnEnemy = false;
 	bool jumpedOnFalling = false;
-	int punchStage = 0;
+	int ticks = 0;
 	public Transform groundCheck;
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
@@ -23,8 +23,10 @@ public class EggScript : MonoBehaviour {
 	public float egg_speed = 2400;
 	public int hp = 10;
 	public Rigidbody2D egg_shot;
+    public GameObject fist_obj;
+    GameObject fist;
 
-	public LayerMask whatIsEnemy;
+    public LayerMask whatIsEnemy;
 	UnityEngine.UI.Slider hpSlider;
 
 	// Use this for initialization
@@ -48,60 +50,79 @@ public class EggScript : MonoBehaviour {
 
 		GetComponent<Rigidbody2D>().velocity = new Vector2 (move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
-		if (move > 0 && !facingRight) {
+		if (move > 0 && facingRight == -1) {
 			Flip ();
-		} else if (move < 0 && facingRight) {
+		} else if (move < 0 && facingRight == 1) {
 			Flip ();
 		}
-	}
+        if (Input.GetKey(KeyCode.Return) && ticks == 0)
+        {
+            ticks += 1;
+            isPunching = true;
+            anim.SetBool("isPunching", true);
+        }
+        if (ticks > 0)
+        {
+            ticks += 1;
+            if (ticks == 5 && isPunching)
+            {
+                if(facingRight == 1) { fist = Instantiate(fist_obj, transform.position + (transform.right * facingRight * 0.26f) + (transform.up * -.03f), Quaternion.Euler(0, 0, 0)) as GameObject; }
+                else { fist = Instantiate(fist_obj, transform.position + (transform.right * facingRight * 0.26f) + (transform.up * -.03f), Quaternion.Euler(0, 180, 0)) as GameObject; }
+                fist.transform.parent = transform;
+            }
+            if (ticks >= 15 && !Input.GetKey(KeyCode.Return) && isPunching == true)
+            {
+                ticks = 0;
+                isPunching = false;
+                Destroy(fist);
+                anim.SetBool("isCharging", false);
+                anim.SetBool("isPunching", false);
+            }
+            else if (ticks >= 15 && !Input.GetKey(KeyCode.Return))
+            {
+                anim.SetBool("isCharging", false);
+                Rigidbody2D shot_egg;
+                if (facingRight == 1)
+                {
+                    shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x + .01f + GetComponent<Rigidbody2D>().velocity.x / 10, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
+                    shot_egg.velocity = new Vector2(egg_speed, 0);
+                }
+                else {
+                    shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x - .01f + GetComponent<Rigidbody2D>().velocity.x / 10, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
+                    shot_egg.velocity = new Vector2(-egg_speed, 0);
+                }
+
+                ticks = 0;
+                isPunching = false;
+                anim.SetBool("isPunching", false);
+            }
+            else if (ticks > 15 && Input.GetKey(KeyCode.Return))
+            {
+                Destroy(fist);
+                anim.SetBool("isCharging", true);
+                isPunching = false;
+            }
+        }
+
+        if (coolDown == true)
+        {
+            coolDownTicks -= 1;
+            if (coolDownTicks == 0)
+            {
+                coolDown = false;
+                coolDownTicks = 5;
+            }
+        }
+    }
 
 	void Update() {
 
-		if (coolDown == true) {
-			coolDownTicks -= 1;
-			if (coolDownTicks == 0) {
-				coolDown = false;
-				coolDownTicks = 5;
-			}
-		}
-
 		anim.SetBool ("flipped", false);
 
-		if (punchStage > 0) {
-			punchStage += 1;
-			if (punchStage >= 8 && !Input.GetKey (KeyCode.Return) && isPunching == true) {
-				punchStage = 0;
-				isPunching = false;
-				anim.SetBool ("isCharging", false);
-				anim.SetBool ("isPunching", false);
-			} else if (punchStage >= 30 && !Input.GetKey (KeyCode.Return)) {
-				anim.SetBool ("isCharging", false);
-				Rigidbody2D shot_egg;
-				if (facingRight) {
-					shot_egg = Instantiate (egg_shot, new Vector3(transform.position.x+.01f+GetComponent<Rigidbody2D>().velocity.x/10,transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
-					shot_egg.velocity = new Vector2 (egg_speed, 0);
-				} else {
-					shot_egg = Instantiate (egg_shot, new Vector3(transform.position.x-.01f+GetComponent<Rigidbody2D>().velocity.x/10,transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
-					shot_egg.velocity = new Vector2 (-egg_speed, 0);
-				}
-
-				punchStage = 0;
-				isPunching = false;
-				anim.SetBool ("isPunching", false);
-			} else if (punchStage > 8 && Input.GetKey (KeyCode.Return)) {
-				anim.SetBool ("isCharging", true);
-				isPunching = false;
-			}
-		}
 		if ((grounded == true || jumpedOnFalling == true) && Input.GetKeyDown (KeyCode.Space)) {
 			anim.SetBool ("Ground", false);
 			jumpedOnFalling = false;
 			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
-		}
-		if (Input.GetKey (KeyCode.Return)  && punchStage == 0) {
-			punchStage += 1;
-			isPunching = true;
-			anim.SetBool ("isPunching", true);
 		}
 		if (gameObject.transform.position.y <= -500) {
 			Destroy (gameObject);
@@ -121,6 +142,10 @@ public class EggScript : MonoBehaviour {
     }
 
 	void OnCollisionEnter2D (Collision2D col) {
+        if(col.gameObject.tag == "projectile")
+        {
+            return;
+        }
 
 		jumpedOnEnemy = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsEnemy);
         if(col.gameObject.tag == "boss")
@@ -141,23 +166,16 @@ public class EggScript : MonoBehaviour {
 		else if (col.gameObject.name.Contains( "apato_head_trap")) {
 			jumpedOnFalling = true;
 			return;
-		}
-		else if ((col.gameObject.tag == "enemy") && isPunching && coolDown == false) {
-			if (col.gameObject.name.Contains ("parasaurolophus") && col.gameObject.GetComponent<paraScript> ().electric) {
-                damagePlayer();
-			} else {
-				Destroy (col.gameObject);
-			}
-			coolDown = true;
 		} else if ((col.gameObject.tag == "enemy" || col.gameObject.tag == "truck") && !isPunching && coolDown == false) {
             damagePlayer();
 			coolDown = true;
 		}
-	}
+        Physics2D.IgnoreLayerCollision(9, 13, false);
+    }
 
 	void Flip() {
 		anim.SetBool ("flipped", true);
-		facingRight = !facingRight;
+		facingRight = -1 * facingRight;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
