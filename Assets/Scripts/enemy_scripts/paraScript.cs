@@ -19,7 +19,7 @@ public class paraScript : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
         if (shouldWait)
         {
@@ -30,6 +30,7 @@ public class paraScript : MonoBehaviour {
                 wait = 10;
             }
         }
+        //If electrified damage player on collision
         ticks += 1;
 		if (ticks % 160 >= 80) {
 			electric = true;

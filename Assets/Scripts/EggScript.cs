@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class EggScript : MonoBehaviour {
-	public float maxSpeed = .5f;
+	public float maxSpeed = .3f;
 	int facingRight = 1;
 	bool coolDown = false;
 
@@ -29,6 +29,7 @@ public class EggScript : MonoBehaviour {
     public LayerMask whatIsEnemy;
 	UnityEngine.UI.Slider hpSlider;
 
+    //Access hp bar and animator
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -37,6 +38,7 @@ public class EggScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        //Check for ground, etc
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
 		anim.SetBool ("Ground", grounded);
 
@@ -55,6 +57,7 @@ public class EggScript : MonoBehaviour {
 		} else if (move < 0 && facingRight == 1) {
 			Flip ();
 		}
+        //Start punching upon getting the Enter key
         if (Input.GetKey(KeyCode.Return) && ticks == 0)
         {
             ticks += 1;
@@ -64,12 +67,14 @@ public class EggScript : MonoBehaviour {
         if (ticks > 0)
         {
             ticks += 1;
+            //If at certain stage in animation create a fist object
             if (ticks == 5 && isPunching)
             {
                 if(facingRight == 1) { fist = Instantiate(fist_obj, transform.position + (transform.right * facingRight * 0.26f) + (transform.up * -.03f), Quaternion.Euler(0, 0, 0)) as GameObject; }
                 else { fist = Instantiate(fist_obj, transform.position + (transform.right * facingRight * 0.26f) + (transform.up * -.03f), Quaternion.Euler(0, 180, 0)) as GameObject; }
                 fist.transform.parent = transform;
             }
+            //If ticks is at the end of the animation, and the enter key isn't pressed, destroy fist and carry on
             if (ticks >= 15 && !Input.GetKey(KeyCode.Return) && isPunching == true)
             {
                 ticks = 0;
@@ -78,7 +83,8 @@ public class EggScript : MonoBehaviour {
                 anim.SetBool("isCharging", false);
                 anim.SetBool("isPunching", false);
             }
-            else if (ticks >= 15 && !Input.GetKey(KeyCode.Return))
+            //If charged enough, and enter is released
+            else if (ticks >= 50 && !Input.GetKey(KeyCode.Return))
             {
                 anim.SetBool("isCharging", false);
                 Rigidbody2D shot_egg;
@@ -96,6 +102,7 @@ public class EggScript : MonoBehaviour {
                 isPunching = false;
                 anim.SetBool("isPunching", false);
             }
+            //If you stopped charging before the time allowed
             else if (ticks > 15 && Input.GetKey(KeyCode.Return))
             {
                 Destroy(fist);
@@ -129,6 +136,7 @@ public class EggScript : MonoBehaviour {
 		}
 	}
 
+    //Subtract hp and add knock back
     public void damagePlayer()
     {
         hp -= 1;
@@ -142,12 +150,21 @@ public class EggScript : MonoBehaviour {
     }
 
 	void OnCollisionEnter2D (Collision2D col) {
-        if(col.gameObject.tag == "projectile")
+        //Ignore if it is your own projectile
+        if(col.gameObject.tag == "projectile" && !col.gameObject.name.Contains("enemy"))
         {
             return;
         }
 
+        //Ignore damage if button
+        if(col.gameObject.name.Contains("button"))
+        {
+            return;
+        }
+
+        //Check if you jumped on the enemy
 		jumpedOnEnemy = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsEnemy);
+        //Damage player on any contact with a boss
         if(col.gameObject.tag == "boss")
         {
             damagePlayer();
@@ -163,6 +180,7 @@ public class EggScript : MonoBehaviour {
             }
 			coolDown = true;
 		}
+        //Don't damage enemy if it is a head trap and also allow you to jump once more
 		else if (col.gameObject.name.Contains( "apato_head_trap")) {
 			jumpedOnFalling = true;
 			return;
@@ -170,7 +188,6 @@ public class EggScript : MonoBehaviour {
             damagePlayer();
 			coolDown = true;
 		}
-        Physics2D.IgnoreLayerCollision(9, 13, false);
     }
 
 	void Flip() {

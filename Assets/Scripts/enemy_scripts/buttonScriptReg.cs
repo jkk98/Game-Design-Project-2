@@ -15,6 +15,7 @@ public class buttonScriptReg : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        //If jumped on by player or shot at, kill parent
         if(col.gameObject.name.Contains("Character") || col.gameObject.name.Contains("egg_shot"))
         {   
             if(col.gameObject.name.Contains("egg_shot"))

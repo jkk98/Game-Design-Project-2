@@ -11,6 +11,7 @@ public class CameraFollow : MonoBehaviour {
 	
 	}
 
+    //Find nearest floor so that the camera knows what to look at if player isn't grounded
 	float findFloorHeight() {
 		if (!player) {
 			return 0;

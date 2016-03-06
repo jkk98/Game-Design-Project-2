@@ -15,13 +15,13 @@ public class punchScript : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log(gameObject.name);
-        if (col.gameObject.tag == "enemy")
+        //If punch collides with enemy, kill enemy
+        if (col.gameObject.tag == "enemy" && !col.gameObject.name.Contains("truck"))
         {
-            Physics2D.IgnoreLayerCollision(9, 13, true);
             Debug.Log("PONCH!");
             Destroy(col.gameObject);
         }
+        //If anything else, ignore
         else
         {
             Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());

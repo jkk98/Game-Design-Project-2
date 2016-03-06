@@ -20,6 +20,7 @@ public class egg_collision : MonoBehaviour {
 	
 	}
 
+    //Pretty self explanatory
 	void OnCollisionEnter2D (Collision2D col) {
 		if (col.gameObject.tag == "enemy") {
 			Destroy (col.gameObject);
