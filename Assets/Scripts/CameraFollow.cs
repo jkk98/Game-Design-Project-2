@@ -32,7 +32,7 @@ public class CameraFollow : MonoBehaviour {
 				nearestDistanceSqr = distanceSqr;
 			}
 		}
-		if (nearestObj) {
+		if (nearestObj.transform) {
 			return nearestObj.transform.position.y;
 		} else {
 			return player.transform.position.y;
@@ -41,6 +41,10 @@ public class CameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(!player)
+        {
+            player = GameObject.Find("Character");
+        }
 		float floorHeight = findFloorHeight ();
 		if (player) {
 			if (player.transform.position.y > floorHeight) {

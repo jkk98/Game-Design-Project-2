@@ -44,7 +44,7 @@ public class lakituScript : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D col) {
 		//Debug.Log (col.gameObject.tag);
 		if (col.gameObject.tag == "environment" || col.gameObject.name.Contains("stairs") || col.gameObject.tag == "enemy" ||
-            col.gameObject.name.Contains("edge") || col.gameObject.tag == "platform") {
+            col.gameObject.name.Contains("edge") || col.gameObject.tag == "floor") {
 			Flip ();
 		}
 	}

@@ -21,6 +21,11 @@ public class egg_enemy : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D col) {
+        //cannonBall ignore parent
+        if(gameObject.name.Contains("cannonBall") && col.gameObject.name.Contains("ankylo"))
+        {
+            return;
+        }
         //Subtract health from player
 		if (col.gameObject.name.Contains("Character")) {
             Debug.Log("eggDamage");

@@ -68,14 +68,14 @@ public class EggScript : MonoBehaviour {
         {
             ticks += 1;
             //If at certain stage in animation create a fist object
-            if (ticks == 5 && isPunching)
+            if (ticks == 10 && isPunching)
             {
-                if(facingRight == 1) { fist = Instantiate(fist_obj, transform.position + (transform.right * facingRight * 0.26f) + (transform.up * -.03f), Quaternion.Euler(0, 0, 0)) as GameObject; }
-                else { fist = Instantiate(fist_obj, transform.position + (transform.right * facingRight * 0.26f) + (transform.up * -.03f), Quaternion.Euler(0, 180, 0)) as GameObject; }
+                if(facingRight == 1) { fist = Instantiate(fist_obj, transform.position + (transform.right * facingRight * 0.20f) + (transform.up * .05f), Quaternion.Euler(0, 0, 0)) as GameObject; }
+                else { fist = Instantiate(fist_obj, transform.position + (transform.right * facingRight * 0.20f) + (transform.up * .05f), Quaternion.Euler(0, 180, 0)) as GameObject; }
                 fist.transform.parent = transform;
             }
             //If ticks is at the end of the animation, and the enter key isn't pressed, destroy fist and carry on
-            if (ticks >= 15 && !Input.GetKey(KeyCode.Return) && isPunching == true)
+            if (ticks >= 20 && !Input.GetKey(KeyCode.Return) && isPunching == true)
             {
                 ticks = 0;
                 isPunching = false;
@@ -90,11 +90,11 @@ public class EggScript : MonoBehaviour {
                 Rigidbody2D shot_egg;
                 if (facingRight == 1)
                 {
-                    shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x + .01f + GetComponent<Rigidbody2D>().velocity.x / 10, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
+                    shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x + .1f + GetComponent<Rigidbody2D>().velocity.x / 10, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
                     shot_egg.velocity = new Vector2(egg_speed, 0);
                 }
                 else {
-                    shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x - .01f + GetComponent<Rigidbody2D>().velocity.x / 10, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
+                    shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x - .1f + GetComponent<Rigidbody2D>().velocity.x / 10, transform.position.y, transform.position.z), transform.rotation) as Rigidbody2D;
                     shot_egg.velocity = new Vector2(-egg_speed, 0);
                 }
 
@@ -103,10 +103,11 @@ public class EggScript : MonoBehaviour {
                 anim.SetBool("isPunching", false);
             }
             //If you stopped charging before the time allowed
-            else if (ticks > 15 && Input.GetKey(KeyCode.Return))
+            else if (ticks > 20 && Input.GetKey(KeyCode.Return))
             {
                 Destroy(fist);
                 anim.SetBool("isCharging", true);
+                anim.SetBool("isPunching", false);
                 isPunching = false;
             }
         }
@@ -170,7 +171,8 @@ public class EggScript : MonoBehaviour {
             damagePlayer();
         }
 		if (jumpedOnEnemy == true && !col.gameObject.name.Contains("tricera_truck") && coolDown == false) {
-            if (col.gameObject.name.Contains("parasaurolophus") && col.gameObject.GetComponent<paraScript> ().electric) {
+            if ((col.gameObject.name.Contains("parasaurolophus") && col.gameObject.GetComponent<paraScript> ().electric) ||
+                col.gameObject.name.Contains("electraProto")) {
                 damagePlayer();
 			} else {
                 Destroy(col.gameObject);
