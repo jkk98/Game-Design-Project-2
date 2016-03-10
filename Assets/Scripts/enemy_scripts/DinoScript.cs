@@ -16,6 +16,7 @@ public class DinoScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //Just keep walking and wait for a while if a collision occurs
         if (shouldWait)
         {
             wait -= 1;
@@ -32,6 +33,7 @@ public class DinoScript : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D col) {
+        //Turn around if a collidable object gets in the way unless a collision has just occurred
 		if (col.gameObject.tag == "environment" || col.gameObject.name.Contains("stairs") || col.gameObject.tag == "enemy" ||
             col.gameObject.name.Contains("edge") || (gameObject.GetComponent<Rigidbody2D>().gravityScale == 0 && col.gameObject.tag == "platform")) {
             if(shouldWait == true)

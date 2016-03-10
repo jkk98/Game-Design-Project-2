@@ -11,6 +11,7 @@ public class CameraFollow : MonoBehaviour {
 	
 	}
 
+    //Find nearest floor so that the camera knows what to look at if player isn't grounded
 	float findFloorHeight() {
 		if (!player) {
 			return 0;
@@ -31,7 +32,7 @@ public class CameraFollow : MonoBehaviour {
 				nearestDistanceSqr = distanceSqr;
 			}
 		}
-		if (nearestObj) {
+		if (nearestObj.transform) {
 			return nearestObj.transform.position.y;
 		} else {
 			return player.transform.position.y;
@@ -40,6 +41,10 @@ public class CameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(!player)
+        {
+            player = GameObject.Find("Character");
+        }
 		float floorHeight = findFloorHeight ();
 		if (player) {
 			if (player.transform.position.y > floorHeight) {

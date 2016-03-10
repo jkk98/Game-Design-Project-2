@@ -1,0 +1,145 @@
+fileFormatVersion: 2
+guid: 0a91f3fb09875444c91750b3e7c3b2af
+timeCreated: 1457327278
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: triceraBossRun_0
+    21300002: triceraBossRun_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: triceraBossRun_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 149, y: -151}
+        - {x: 189, y: -121}
+        - {x: 189, y: 30}
+        - {x: 153, y: 9}
+        - {x: 80, y: 51}
+        - {x: 77, y: 66}
+        - {x: 69, y: 93}
+        - {x: 64, y: 137}
+        - {x: 48, y: 152}
+        - {x: 26, y: 171}
+        - {x: 4, y: 181}
+        - {x: -8, y: 183}
+        - {x: -20, y: 184}
+        - {x: -65, y: 184}
+        - {x: -72, y: 177}
+        - {x: -69, y: 156}
+        - {x: -96, y: 153}
+        - {x: -117, y: 94}
+        - {x: -111, y: 65}
+        - {x: -107, y: 58}
+        - {x: -119, y: 17}
+        - {x: -179, y: 95}
+        - {x: -182, y: 95}
+        - {x: -182, y: 27}
+        - {x: -179, y: -9}
+        - {x: -170, y: -95}
+        - {x: -170, y: -140}
+        - {x: -127, y: -162}
+        - {x: -64, y: -175}
+        - {x: -5, y: -175}
+        - {x: 51, y: -122}
+        - {x: 90, y: -142}
+        - {x: 111, y: -139}
+    - name: triceraBossRun_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 162, y: -163}
+        - {x: 191, y: -76}
+        - {x: 195, y: -31}
+        - {x: 195, y: -13}
+        - {x: 133, y: -5}
+        - {x: 93, y: 22}
+        - {x: 73, y: 76}
+        - {x: 54, y: 116}
+        - {x: 32, y: 157}
+        - {x: 0, y: 162}
+        - {x: -70, y: 162}
+        - {x: -73, y: 155}
+        - {x: -70, y: 134}
+        - {x: -97, y: 131}
+        - {x: -118, y: 72}
+        - {x: -109, y: 36}
+        - {x: -120, y: -10}
+        - {x: -180, y: 73}
+        - {x: -183, y: 71}
+        - {x: -183, y: 5}
+        - {x: -171, y: -108}
+        - {x: -168, y: -115}
+        - {x: -162, y: -121}
+        - {x: -159, y: -120}
+        - {x: -140, y: -146}
+        - {x: -129, y: -160}
+        - {x: -54, y: -188}
+        - {x: 33, y: -188}
+        - {x: 39, y: -174}
+        - {x: 78, y: -155}
+        - {x: 102, y: -175}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

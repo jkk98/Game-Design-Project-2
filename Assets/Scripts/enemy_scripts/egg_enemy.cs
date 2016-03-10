@@ -21,10 +21,18 @@ public class egg_enemy : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D col) {
-		if (col.gameObject.tag == "Player") {
-			col.gameObject.GetComponent<EggScript> ().hp -= 1;
+        //cannonBall ignore parent
+        if(gameObject.name.Contains("cannonBall") && col.gameObject.name.Contains("ankylo"))
+        {
+            return;
+        }
+        //Subtract health from player
+		if (col.gameObject.name.Contains("Character")) {
+            Debug.Log("eggDamage");
+            col.gameObject.GetComponent<EggScript>().damagePlayer();
 			Destroy (gameObject);
 		}
+        //Destroy self on any other collision
 		else if (col.gameObject.CompareTag("environment") || col.gameObject.CompareTag("floor") || 
 			(col.gameObject.CompareTag("enemy") && !col.gameObject.name.Contains("oviraptor")
             && !col.gameObject.name.Contains("lakitu"))) {

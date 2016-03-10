@@ -20,15 +20,17 @@ public class lakituScript : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		ticks += 1;
-		if (ticks % 156 == 84) {
+        //If the hatch is open drop egg bomb
+		if (ticks % 130 == 60) {
 			Rigidbody2D shot_egg;
 			shot_egg = Instantiate (egg_bomb, new Vector3(transform.position.x+.2f,transform.position.y-.1f, transform.position.z), transform.rotation) as Rigidbody2D;
 			shot_egg.velocity = new Vector2 (0, egg_speed);
 			
 		}
-		if ( player && player.transform.position.x == transform.position.x) {
+        //If player is under lakitu drop egg bomb
+		if ( player && player.transform.position.x == transform.position.x + .2f) {
 			Rigidbody2D shot_egg;
 			shot_egg = Instantiate (egg_bomb, new Vector3(transform.position.x+.2f,transform.position.y-.1f, transform.position.z), transform.rotation) as Rigidbody2D;
 			shot_egg.velocity = new Vector2 (0, egg_speed);
@@ -42,7 +44,7 @@ public class lakituScript : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D col) {
 		//Debug.Log (col.gameObject.tag);
 		if (col.gameObject.tag == "environment" || col.gameObject.name.Contains("stairs") || col.gameObject.tag == "enemy" ||
-            col.gameObject.name.Contains("edge")) {
+            col.gameObject.name.Contains("edge") || col.gameObject.tag == "floor") {
 			Flip ();
 		}
 	}

@@ -29,6 +29,7 @@ public class robo_raptor_boss_script : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        //If player is nearby
         if (player && Mathf.Abs(player.transform.position.x - transform.position.x) < 5.0f
                    && Mathf.Abs(player.transform.position.y - transform.position.y) < 15.0f)
         {
@@ -37,6 +38,7 @@ public class robo_raptor_boss_script : MonoBehaviour {
                 Debug.Log("ACTIVATE");
                 //roar = true;
             }
+            //Do kill animation if hp at 0
             if (hp == 0)
             {
                 anim.SetBool("walk", false);
@@ -53,14 +55,18 @@ public class robo_raptor_boss_script : MonoBehaviour {
             {
                 Destroy(gameObject);
             }
+            //If no button
             if(transform.childCount == 1)
             {
+                //Do standard walking and slashing if hp is greater than 3
                 if (hp > 3)
                 {
                     Debug.Log("ACTIVATE");
                     anim.SetBool("walk", true);
                     walk = true;
-                } else if (hp <= 3 && hp > 0)
+                }
+                //Do laser if hp is at or under 3
+                else if (hp <= 3 && hp > 0)
                 {
                     anim.SetBool("lazor", true);
                     walk = false;
@@ -70,6 +76,7 @@ public class robo_raptor_boss_script : MonoBehaviour {
                     anim.SetBool("lazor", true);
                     //walk = true;
                 }
+                //Alternate between chest and head buttons if not firing laser
                 Debug.Log("CREATE BUTTON");
                 if(hp > 3 && hp % 2 == 0)
                 {
@@ -83,6 +90,7 @@ public class robo_raptor_boss_script : MonoBehaviour {
                     cur_button = (GameObject)Instantiate(button, transform.position + (transform.right * .30f * facingRight) + (transform.up * 1.00f), Quaternion.Euler(0, 0, 0));
                     cur_button.transform.parent = transform;
                 }
+                //Else put button on chest
                 else if (hp <= 3 && hp > 0)
                 {
                     GameObject cur_button;
@@ -92,17 +100,21 @@ public class robo_raptor_boss_script : MonoBehaviour {
                 }
 
             }
+            //Could add roaring if we wanted to
             if (roar)
             {
 
             }
+            //Walk if the conditions call for it
             if (walk)
             {
                 //Debug.Log (walkAmount.x);
                 anim.SetBool("walk", true);
                 transform.Translate(new Vector3(facingRight * move* Time.deltaTime, 0,0));
 
-            } if (walk != true && fireLazor != true && Mathf.Abs(player.transform.position.x - transform.position.x) < 2.5f && ticks == 0)
+            }
+            //If not doing anything at the moment and player is really close, slash at it
+            if (walk != true && fireLazor != true && Mathf.Abs(player.transform.position.x - transform.position.x) < 2.5f && ticks == 0)
             {
                 slash = true;
                 anim.SetBool("slash", true);
@@ -111,6 +123,7 @@ public class robo_raptor_boss_script : MonoBehaviour {
             {
                 ticks += 1;
             }
+            //Slash player only once until slashing him again (or else the slash will instantly kill him)
             if (slash && ticks > 15 && !alreadySlashed)
             {
                 bool slashedPlayer = Physics2D.OverlapCircle(clawSpot.position, .5f, target);
@@ -133,6 +146,7 @@ public class robo_raptor_boss_script : MonoBehaviour {
             {
                 ticks += 1;
             }
+            //If player is above the raptor than shoot a straight laser, else shoot to the ground
             if (fireLazor && ticks == 25)
             {
                 Debug.Log("FIRIN!");
@@ -156,6 +170,7 @@ public class robo_raptor_boss_script : MonoBehaviour {
             {
                 ticks += 1;
             }
+            //If the player hasn't approached for a while than go to the other room in an effort to "get" him
             if (!walk && !fireLazor && !slash && hp!= 0 && ticks == 150 && hp != 0)
             {
                 Debug.Log("ChasePlayer");
@@ -180,6 +195,7 @@ public class robo_raptor_boss_script : MonoBehaviour {
         }
 
     }
+    //Stop walking upon environment collision
     void OnCollisionEnter2D (Collision2D col)
     {
         if(col.gameObject.tag == "environment")
