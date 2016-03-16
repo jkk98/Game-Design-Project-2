@@ -22,11 +22,11 @@ public class egg_collision : MonoBehaviour {
 
     //Pretty self explanatory
 	void OnCollisionEnter2D (Collision2D col) {
-		if (col.gameObject.tag == "enemy") {
+		if (col.gameObject.tag == "enemy" && !col.gameObject.name.Contains("ankylo")) {
 			Destroy (col.gameObject);
 			Destroy (gameObject);
 		}
-		else if (col.gameObject.CompareTag("environment") || col.gameObject.CompareTag("boss")) {
+		else if (col.gameObject.CompareTag("environment") || col.gameObject.CompareTag("floor") || col.gameObject.CompareTag("boss")) {
 			Destroy (gameObject);
 		}
 	}

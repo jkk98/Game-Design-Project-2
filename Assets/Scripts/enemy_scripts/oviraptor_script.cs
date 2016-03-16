@@ -12,7 +12,7 @@ public class oviraptor_script : MonoBehaviour
     Vector3 walkAmount;
 
     public Rigidbody2D egg_shot;
-    float egg_speed = 1f;
+    public float egg_speed = 1f;
 
     int ticks = 0;
 
@@ -27,15 +27,23 @@ public class oviraptor_script : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!player)
+        {
+            player = GameObject.Find("Character");
+        }
         if (ticks % 50 == 10 && shootEgg == true)
         {
             //Shoot egg at the specified x and y values if player is nearby
             Rigidbody2D shot_egg;
-            if (facingRight) { shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x + xShoot, transform.position.y + yShoot, transform.position.z), transform.rotation) as Rigidbody2D; }
-            else { shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x - xShoot, transform.position.y + yShoot, transform.position.z), transform.rotation) as Rigidbody2D; }
-            shot_egg.velocity = new Vector2(egg_speed, 0);
+            if (facingRight) { shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x + xShoot, transform.position.y + yShoot, transform.position.z), transform.rotation) as Rigidbody2D;
+                shot_egg.velocity = new Vector2(egg_speed, 0);
+            }
+            else { shot_egg = Instantiate(egg_shot, new Vector3(transform.position.x - xShoot, transform.position.y + yShoot, transform.position.z), transform.rotation) as Rigidbody2D;
+                shot_egg.velocity = new Vector2(-egg_speed, 0);
+            }
+            
 
-        } else if(ticks % 50 >= 10 && shootEgg == true)
+        } else if(ticks % 50 == 1 && shootEgg == true)
         {
             anim.SetBool("YesShoot", false);
 
@@ -51,7 +59,7 @@ public class oviraptor_script : MonoBehaviour
             }
             ticks += 1;
             shootEgg = true;
-            if(ticks % 60 < 14)
+            if(ticks % 50 == 0)
             { anim.SetBool("YesShoot", true);
             }
         } else {

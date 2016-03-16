@@ -1,0 +1,306 @@
+fileFormatVersion: 2
+guid: 02f5d5b09abe28142bc90649ecc9eb54
+timeCreated: 1457502012
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: triceraCannon_0
+    21300002: triceraCannon_1
+    21300004: triceraCannon_2
+    21300006: triceraCannon_3
+    21300008: triceraCannon_4
+    21300010: triceraCannon_5
+    21300012: triceraCannon_6
+    21300014: triceraCannon_7
+    21300016: triceraCannon_8
+    21300018: triceraCannon_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 8192
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: triceraCannon_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -46.5, y: 95.5}
+        - {x: -94.5, y: 67.5}
+        - {x: -94.5, y: -56.5}
+        - {x: -91.5, y: -74.5}
+        - {x: -56.5, y: -90.5}
+        - {x: 55.5, y: -90.5}
+        - {x: 71.5, y: -87.5}
+        - {x: 97.5, y: -67.5}
+        - {x: 97.5, y: 18.5}
+        - {x: 29.5, y: 95.5}
+    - name: triceraCannon_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.800003, y: 84.5}
+        - {x: -50.199997, y: 84.5}
+        - {x: -92.2, y: 47.5}
+        - {x: -94.2, y: 38.5}
+        - {x: -94.2, y: -30.5}
+        - {x: -83.2, y: -97.5}
+        - {x: 101.8, y: -97.5}
+        - {x: 101.8, y: 9.5}
+        - {x: 51.800003, y: 68.5}
+    - name: triceraCannon_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98.600006, y: 10.5}
+        - {x: 91.600006, y: 13.5}
+        - {x: 84.600006, y: 7.5}
+        - {x: 17.600006, y: 74.5}
+        - {x: 11.600006, y: 90.5}
+        - {x: -93.399994, y: 90.5}
+        - {x: -93.399994, y: -65.5}
+        - {x: -83.399994, y: -88.5}
+        - {x: -63.399994, y: -90.5}
+        - {x: 27.600006, y: -90.5}
+        - {x: 95.600006, y: -75.5}
+        - {x: 97.600006, y: -62.5}
+        - {x: 98.600006, y: -49.5}
+    - name: triceraCannon_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24.400024, y: 25.5}
+        - {x: 19.400024, y: 23.5}
+        - {x: 16.400024, y: 25.5}
+        - {x: 16.400024, y: 24.5}
+        - {x: 18.400024, y: 25.5}
+        - {x: 44.400024, y: 45.5}
+        - {x: 13.400024, y: 79.5}
+        - {x: -61.599976, y: 79.5}
+        - {x: -94.599976, y: 47.5}
+        - {x: -94.599976, y: -83.5}
+        - {x: -42.599976, y: -97.5}
+        - {x: 66.400024, y: -97.5}
+        - {x: 82.400024, y: -91.5}
+        - {x: 101.400024, y: -42.5}
+        - {x: 101.400024, y: -1.5}
+    - name: triceraCannon_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22.700012, y: 34.5}
+        - {x: 19.700012, y: 34.5}
+        - {x: 16.700012, y: 36.5}
+        - {x: 16.700012, y: 35.5}
+        - {x: 18.700012, y: 36.5}
+        - {x: 27.700012, y: 42.5}
+        - {x: 13.700012, y: 76.5}
+        - {x: 2.7000122, y: 90.5}
+        - {x: -65.29999, y: 90.5}
+        - {x: -94.29999, y: 80.5}
+        - {x: -94.29999, y: -90.5}
+        - {x: 47.700012, y: -90.5}
+        - {x: 98.70001, y: -72.5}
+        - {x: 98.70001, y: 10.5}
+        - {x: 87.70001, y: 13.5}
+    - name: triceraCannon_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 70.5, y: 9.5}
+        - {x: 12.5, y: 79.5}
+        - {x: -60.5, y: 79.5}
+        - {x: -95.5, y: 37.5}
+        - {x: -95.5, y: -66.5}
+        - {x: -44.5, y: -97.5}
+        - {x: 47.5, y: -97.5}
+        - {x: 80.5, y: -88.5}
+        - {x: 99.5, y: -39.5}
+        - {x: 100.5, y: -34.5}
+        - {x: 100.5, y: -1.5}
+    - name: triceraCannon_6
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.8000488, y: 90.5}
+        - {x: -85.19995, y: 90.5}
+        - {x: -93.19995, y: 84.5}
+        - {x: -93.19995, y: -72.5}
+        - {x: -74.19995, y: -90.5}
+        - {x: 92.80005, y: -90.5}
+        - {x: 98.80005, y: -69.5}
+        - {x: 98.80005, y: 14.5}
+    - name: triceraCannon_7
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53.399902, y: 79.5}
+        - {x: -60.399902, y: 62.5}
+        - {x: -94.3999, y: 36.5}
+        - {x: -94.3999, y: -16.5}
+        - {x: -92.3999, y: -56.5}
+        - {x: -76.3999, y: -82.5}
+        - {x: -63.399902, y: -97.5}
+        - {x: 83.6001, y: -97.5}
+        - {x: 101.6001, y: -90.5}
+        - {x: 101.6001, y: 1.5}
+        - {x: 17.600098, y: 79.5}
+    - name: triceraCannon_8
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 91.400024, y: 13.5}
+        - {x: 24.400024, y: 39.5}
+        - {x: 19.400024, y: 34.5}
+        - {x: 16.400024, y: 36.5}
+        - {x: 16.400024, y: 35.5}
+        - {x: 18.400024, y: 36.5}
+        - {x: 22.400024, y: 39.5}
+        - {x: 29.400024, y: 76.5}
+        - {x: -10.599976, y: 99.5}
+        - {x: -82.599976, y: 99.5}
+        - {x: -94.599976, y: 89.5}
+        - {x: -94.599976, y: -66.5}
+        - {x: -87.599976, y: -90.5}
+        - {x: 41.400024, y: -90.5}
+        - {x: 98.400024, y: -71.5}
+        - {x: 98.400024, y: 10.5}
+      - - {x: 100.400024, y: 0.5}
+        - {x: 102.400024, y: -1.5}
+        - {x: 103.400024, y: -1.5}
+        - {x: 103.400024, y: 21.5}
+        - {x: 100.400024, y: 20.5}
+    - name: triceraCannon_9
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22.700073, y: 23.5}
+        - {x: 19.700073, y: 23.5}
+        - {x: 16.700073, y: 25.5}
+        - {x: 16.700073, y: 24.5}
+        - {x: 18.700073, y: 25.5}
+        - {x: 35.700073, y: 42.5}
+        - {x: -5.2999268, y: 99.5}
+        - {x: -84.29993, y: 99.5}
+        - {x: -102.29993, y: 86.5}
+        - {x: -102.29993, y: -31.5}
+        - {x: -92.29993, y: -95.5}
+        - {x: -76.29993, y: -97.5}
+        - {x: 58.700073, y: -97.5}
+        - {x: 86.70007, y: -85.5}
+        - {x: 101.70007, y: -37.5}
+        - {x: 101.70007, y: -2.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

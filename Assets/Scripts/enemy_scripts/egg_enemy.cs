@@ -21,8 +21,21 @@ public class egg_enemy : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D col) {
+        Debug.Log(col.gameObject.name);
         //cannonBall ignore parent
         if(gameObject.name.Contains("cannonBall") && col.gameObject.name.Contains("ankylo"))
+        {
+            return;
+        }
+        if(gameObject.name.Contains("larger_cannonball") && col.gameObject.name.Contains("triceraBoss"))
+        {
+            return;
+        }
+        if (col.gameObject.name.Contains("button"))
+        {
+            return;
+        }
+        if (col.gameObject.name.Contains("cannon") && gameObject.name.Contains("cannon"))
         {
             return;
         }

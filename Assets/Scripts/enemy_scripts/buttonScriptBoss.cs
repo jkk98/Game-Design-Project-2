@@ -34,12 +34,26 @@ public class buttonScriptBoss : MonoBehaviour
             }
             //Destroy self and subtract health from boss
             Destroy(gameObject);
-            transform.parent.gameObject.GetComponent<robo_raptor_boss_script>().hp -= 1;
-            if (transform.parent.gameObject.GetComponent<robo_raptor_boss_script>().hp == 0)
+            if(transform.parent.gameObject.name.Contains("robo_raptor")) {
+                transform.parent.gameObject.GetComponent<robo_raptor_boss_script>().hp -= 1;
+                if (transform.parent.gameObject.GetComponent<robo_raptor_boss_script>().hp == 0)
+                {
+                    Debug.Log("ITS KILL!");
+                    //Destroy(transform.parent.gameObject);
+                }
+            } else if (transform.parent.gameObject.name.Contains("triceraBoss"))
             {
-                Debug.Log("ITS KILL!");
-                //Destroy(transform.parent.gameObject);
+                transform.parent.gameObject.GetComponent<triceraBossScript>().hp -= 1;
+                transform.parent.gameObject.GetComponent<triceraBossScript>().fallback = true;
+                transform.parent.gameObject.transform.position = new Vector3(transform.parent.transform.position.x, transform.parent.transform.position.y - .2f, 0);
+                if (transform.parent.gameObject.GetComponent<triceraBossScript>().hp == 0)
+                {
+                    Debug.Log("ITS KILL!");
+                    //Destroy(transform.parent.gameObject);
+                }
+
             }
+            
         }
     }
 }

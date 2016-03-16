@@ -29,6 +29,12 @@ public class robo_raptor_boss_script : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+        if (!player)
+        {
+            player = GameObject.Find("Character");
+        }
+
         //If player is nearby
         if (player && Mathf.Abs(player.transform.position.x - transform.position.x) < 5.0f
                    && Mathf.Abs(player.transform.position.y - transform.position.y) < 15.0f)

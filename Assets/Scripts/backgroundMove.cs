@@ -4,7 +4,7 @@ using System.Collections;
 public class backgroundMove : MonoBehaviour {
 
     Vector3 moveAmount;
-    float move = 20f;
+    float move = 40f;
 
 	// Use this for initialization
 	void Start () {

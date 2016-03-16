@@ -16,7 +16,7 @@ public class EggScript : MonoBehaviour {
 	bool jumpedOnFalling = false;
 	int ticks = 0;
 	public Transform groundCheck;
-	float groundRadius = 0.2f;
+	float groundRadius = 0.1f;
 	public LayerMask whatIsGround;
 	public float jumpForce = .5f;
 	public bool isPunching = false;
@@ -150,7 +150,15 @@ public class EggScript : MonoBehaviour {
 
     }
 
-	void OnCollisionEnter2D (Collision2D col) {
+    //Subtract hp and add knock back
+    public void healPlayer()
+    {
+        hp = 10;
+        hpSlider.value = hp;
+
+    }
+
+    void OnCollisionEnter2D (Collision2D col) {
         //Ignore if it is your own projectile
         if(col.gameObject.tag == "projectile" && !col.gameObject.name.Contains("enemy"))
         {
@@ -158,9 +166,14 @@ public class EggScript : MonoBehaviour {
         }
 
         //Ignore damage if button
-        if(col.gameObject.name.Contains("button"))
+        if(col.gameObject.name.Contains("button") || col.gameObject.tag == "environment")
         {
             return;
+        }
+        if (col.gameObject.name.Contains("lavaHazard"))
+        {
+            damagePlayer();
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(-100, 100));
         }
 
         //Check if you jumped on the enemy
@@ -170,11 +183,18 @@ public class EggScript : MonoBehaviour {
         {
             damagePlayer();
         }
-		if (jumpedOnEnemy == true && !col.gameObject.name.Contains("tricera_truck") && coolDown == false) {
+		if (jumpedOnEnemy == true && !col.gameObject.name.Contains("tricera_truck") && !col.gameObject.name.Contains("Proto") 
+            && !col.gameObject.name.Contains("ankylo") && !col.gameObject.name.Contains("flameShot") && !col.gameObject.name.Contains("fireStego")
+            && !col.gameObject.name.Contains("wideFlames") && coolDown == false) {
             if ((col.gameObject.name.Contains("parasaurolophus") && col.gameObject.GetComponent<paraScript> ().electric) ||
                 col.gameObject.name.Contains("electraProto")) {
                 damagePlayer();
 			} else {
+                if (col.gameObject.name.Contains("lavaSnail"))
+                {
+                    jumpedOnFalling = true;
+                    return;
+                }
                 Destroy(col.gameObject);
                 anim.SetBool("Ground", false);
                 GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300));
