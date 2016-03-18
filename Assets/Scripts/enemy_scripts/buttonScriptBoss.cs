@@ -33,6 +33,8 @@ public class buttonScriptBoss : MonoBehaviour
                 col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300));
             }
             //Destroy self and subtract health from boss
+			//AudioSource audio = GetComponent<AudioSource>();
+			//audio.Play();
             Destroy(gameObject);
             transform.parent.gameObject.GetComponent<robo_raptor_boss_script>().hp -= 1;
             if (transform.parent.gameObject.GetComponent<robo_raptor_boss_script>().hp == 0)
