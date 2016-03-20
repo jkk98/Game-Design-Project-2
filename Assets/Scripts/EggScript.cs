@@ -175,10 +175,12 @@ public class EggScript : MonoBehaviour {
                 col.gameObject.name.Contains("electraProto")) {
                 damagePlayer();
 			} else {
-                Destroy(col.gameObject);
-                anim.SetBool("Ground", false);
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300));
-                jumpedOnEnemy = false;
+				if (col.gameObject.tag == "enemy") {
+					Destroy (col.gameObject);
+					anim.SetBool ("Ground", false);
+					GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, 300));
+					jumpedOnEnemy = false;
+				}
             }
 			coolDown = true;
 		}
