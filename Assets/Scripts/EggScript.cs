@@ -143,10 +143,8 @@ public class EggScript : MonoBehaviour {
         hp -= 1;
         GetComponent<Rigidbody2D>().AddForce(new Vector2(-300, 300));
         hpSlider.value = hp;
-        if (hp == 0)
-        {
-            Destroy(gameObject);
-        }
+        
+		GameController.controller.current_health = hp;
 
     }
 
