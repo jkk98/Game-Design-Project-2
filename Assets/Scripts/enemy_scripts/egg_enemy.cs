@@ -26,14 +26,25 @@ public class egg_enemy : MonoBehaviour {
         {
             return;
         }
+        if(gameObject.name.Contains("larger_cannonball") && col.gameObject.name.Contains("triceraBoss"))
+        {
+            return;
+        }
+        if (col.gameObject.name.Contains("button"))
+        {
+            return;
+        }
+        if (col.gameObject.name.Contains("cannon") && gameObject.name.Contains("cannon"))
+        {
+            return;
+        }
         //Subtract health from player
 		if (col.gameObject.name.Contains("Character")) {
-            Debug.Log("eggDamage");
-            col.gameObject.GetComponent<EggScript>().damagePlayer();
+            col.gameObject.GetComponent<healthMethods>().damagePlayer();
 			Destroy (gameObject);
 		}
         //Destroy self on any other collision
-		else if (col.gameObject.CompareTag("environment") || col.gameObject.CompareTag("floor") || 
+		else if (col.gameObject.CompareTag("environment") || col.gameObject.CompareTag("floor") || col.gameObject.CompareTag("lava") ||
 			(col.gameObject.CompareTag("enemy") && !col.gameObject.name.Contains("oviraptor")
             && !col.gameObject.name.Contains("lakitu"))) {
 			Destroy (gameObject);

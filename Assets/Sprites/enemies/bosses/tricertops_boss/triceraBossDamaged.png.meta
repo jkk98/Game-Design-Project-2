@@ -1,0 +1,287 @@
+fileFormatVersion: 2
+guid: 63713d36328c47c49b47008afdc4bc2b
+timeCreated: 1458001986
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: triceraBossDamaged_0
+    21300002: triceraBossDamaged_1
+    21300004: triceraBossDamaged_2
+    21300006: triceraBossDamaged_3
+    21300008: triceraBossDamaged_4
+    21300010: triceraBossDamaged_5
+    21300012: triceraBossDamaged_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: triceraBossDamaged_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 142.5, y: -8.5}
+        - {x: 110.5, y: -14.5}
+        - {x: 28.5, y: 103.5}
+        - {x: 9.5, y: 119.5}
+        - {x: -54.5, y: 119.5}
+        - {x: -83.5, y: 107.5}
+        - {x: -88.5, y: 54.5}
+        - {x: -131.5, y: 53.5}
+        - {x: -134.5, y: 51.5}
+        - {x: -134.5, y: 10.5}
+        - {x: -133.5, y: -2.5}
+        - {x: -131.5, y: -80.5}
+        - {x: -95.5, y: -119.5}
+        - {x: -45.5, y: -138.5}
+        - {x: 47.5, y: -138.5}
+        - {x: 121.5, y: -121.5}
+        - {x: 143.5, y: -45.5}
+        - {x: 143.5, y: -8.5}
+    - name: triceraBossDamaged_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 146.57141, y: -6.5}
+        - {x: 50.57141, y: 23.5}
+        - {x: 76.57141, y: 44.5}
+        - {x: 25.571411, y: 114.5}
+        - {x: -14.428589, y: 118.5}
+        - {x: -47.42859, y: 118.5}
+        - {x: -70.42859, y: 87.5}
+        - {x: -68.42859, y: 72.5}
+        - {x: -61.42859, y: 66.5}
+        - {x: -81.42859, y: 64.5}
+        - {x: -131.42859, y: 58.5}
+        - {x: -131.42859, y: -28.5}
+        - {x: -124.42859, y: -87.5}
+        - {x: -84.42859, y: -135.5}
+        - {x: -33.42859, y: -146.5}
+        - {x: 58.57141, y: -146.5}
+        - {x: 64.57141, y: -136.5}
+        - {x: 125.57141, y: -129.5}
+        - {x: 146.57141, y: -123.5}
+    - name: triceraBossDamaged_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52.642822, y: 84.5}
+        - {x: -0.35717773, y: 118.5}
+        - {x: -64.35718, y: 118.5}
+        - {x: -100.35718, y: 65.5}
+        - {x: -90.35718, y: 11.5}
+        - {x: -128.35718, y: 52.5}
+        - {x: -131.35718, y: 52.5}
+        - {x: -131.35718, y: -26.5}
+        - {x: -128.35718, y: -82.5}
+        - {x: -117.35718, y: -91.5}
+        - {x: -111.35718, y: -89.5}
+        - {x: -112.35718, y: -107.5}
+        - {x: -82.35718, y: -142.5}
+        - {x: -35.357178, y: -146.5}
+        - {x: 74.64282, y: -146.5}
+        - {x: 146.64282, y: -127.5}
+        - {x: 146.64282, y: -6.5}
+        - {x: 66.64282, y: 23.5}
+    - name: triceraBossDamaged_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 71.714294, y: 15.5}
+        - {x: 68.714294, y: 43.5}
+        - {x: 46.714294, y: 85.5}
+        - {x: 6.7142944, y: 116.5}
+        - {x: -3.2857056, y: 118.5}
+        - {x: -56.285706, y: 118.5}
+        - {x: -85.285706, y: 95.5}
+        - {x: -131.2857, y: 70.5}
+        - {x: -131.2857, y: -22.5}
+        - {x: -122.285706, y: -87.5}
+        - {x: -112.285706, y: -93.5}
+        - {x: -106.285706, y: -110.5}
+        - {x: -78.285706, y: -136.5}
+        - {x: -22.285706, y: -146.5}
+        - {x: 123.714294, y: -146.5}
+        - {x: 129.7143, y: -145.5}
+        - {x: 146.7143, y: -125.5}
+        - {x: 146.7143, y: -7.5}
+    - name: triceraBossDamaged_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 100.785645, y: 7.5}
+        - {x: 51.785645, y: 97.5}
+        - {x: 28.785645, y: 118.5}
+        - {x: -52.214355, y: 118.5}
+        - {x: -74.214355, y: 92.5}
+        - {x: -88.214355, y: -0.5}
+        - {x: -127.214355, y: 54.5}
+        - {x: -131.21436, y: 50.5}
+        - {x: -131.21436, y: -62.5}
+        - {x: -121.214355, y: -107.5}
+        - {x: -92.214355, y: -133.5}
+        - {x: -49.214355, y: -146.5}
+        - {x: 62.785645, y: -146.5}
+        - {x: 69.785645, y: -145.5}
+        - {x: 134.78564, y: -128.5}
+        - {x: 146.78564, y: -123.5}
+        - {x: 146.78564, y: -7.5}
+    - name: triceraBossDamaged_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 79.85718, y: -121.5}
+        - {x: 82.85718, y: -115.5}
+        - {x: 84.85718, y: -110.5}
+        - {x: 85.85718, y: -116.5}
+        - {x: 89.85718, y: -130.5}
+        - {x: 126.85718, y: -129.5}
+        - {x: 144.85718, y: -120.5}
+        - {x: 147.85718, y: -115.5}
+        - {x: 147.85718, y: -0.5}
+        - {x: 70.85718, y: 118.5}
+        - {x: -54.142822, y: 118.5}
+        - {x: -73.14282, y: 88.5}
+        - {x: -78.14282, y: 61.5}
+        - {x: -80.14282, y: 37.5}
+        - {x: -77.14282, y: 24.5}
+        - {x: -66.14282, y: 12.5}
+        - {x: -126.14282, y: 52.5}
+        - {x: -131.14282, y: 51.5}
+        - {x: -131.14282, y: -58.5}
+        - {x: -122.14282, y: -101.5}
+        - {x: -93.14282, y: -83.5}
+        - {x: -88.14282, y: -75.5}
+        - {x: -81.14282, y: -80.5}
+        - {x: -76.14282, y: -79.5}
+        - {x: -81.14282, y: -81.5}
+        - {x: -100.14282, y: -91.5}
+        - {x: -105.14282, y: -103.5}
+        - {x: -110.14282, y: -128.5}
+        - {x: -68.14282, y: -146.5}
+        - {x: 68.85718, y: -146.5}
+        - {x: 62.857178, y: -138.5}
+        - {x: 56.857178, y: -133.5}
+        - {x: 74.85718, y: -129.5}
+    - name: triceraBossDamaged_6
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.928589, y: 118.5}
+        - {x: -114.07141, y: 118.5}
+        - {x: -131.07141, y: 91.5}
+        - {x: -131.07141, y: -38.5}
+        - {x: -121.07141, y: -86.5}
+        - {x: -116.07141, y: -90.5}
+        - {x: -113.07141, y: -91.5}
+        - {x: -93.07141, y: -83.5}
+        - {x: -90.07141, y: -74.5}
+        - {x: -81.07141, y: -79.5}
+        - {x: -78.07141, y: -79.5}
+        - {x: -72.07141, y: -73.5}
+        - {x: -71.07141, y: -80.5}
+        - {x: -82.07141, y: -80.5}
+        - {x: -100.07141, y: -91.5}
+        - {x: -109.07141, y: -108.5}
+        - {x: -79.07141, y: -140.5}
+        - {x: -63.07141, y: -146.5}
+        - {x: 111.92859, y: -146.5}
+        - {x: 130.92859, y: -143.5}
+        - {x: 145.92859, y: -119.5}
+        - {x: 146.92859, y: -113.5}
+        - {x: 146.92859, y: 26.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

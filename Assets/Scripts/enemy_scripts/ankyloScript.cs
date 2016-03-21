@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ankyloScript : MonoBehaviour
 {
+    public Transform pressurePoint;
     Animator anim;
     bool facingRight = true;
     public float move = -.75f;
@@ -11,6 +12,7 @@ public class ankyloScript : MonoBehaviour
     bool shouldWait = false;
     bool shootingCannon = false;
     GameObject player;
+    public LayerMask target;
     public Rigidbody2D cannonBall;
     int ticks = 0;
 
@@ -25,6 +27,11 @@ public class ankyloScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        bool hitPressurePoint = Physics2D.OverlapCircle(pressurePoint.position, .2f, target);
+        if (hitPressurePoint)
+        {
+            Destroy(gameObject);
+        }
         //Just keep walking and wait for a while if a collision occurs
         if (shouldWait)
         {
@@ -37,7 +44,7 @@ public class ankyloScript : MonoBehaviour
         }
         if (!player)
         {
-            player = GameObject.Find("Character");
+            player = GameObject.FindWithTag("Player");
         }
         //If player nearby shoot cannons
         if (player && Mathf.Abs(player.transform.position.x - transform.position.x) >= 2.0f)

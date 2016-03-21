@@ -21,6 +21,10 @@ public class lakituScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+        if (!player)
+        {
+            player = GameObject.FindWithTag("Player");
+        }
 		ticks += 1;
         //If the hatch is open drop egg bomb
 		if (ticks % 130 == 60) {
