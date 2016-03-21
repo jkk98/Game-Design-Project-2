@@ -20,12 +20,33 @@ public class mosquitoScript : MonoBehaviour {
         anim = GetComponent<Animator>();
 
     }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    GameObject FindClosestLavaSource()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("lava");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
+    }
+
+// Update is called once per frame
+void FixedUpdate () {
         if (!player)
         {
-            player = GameObject.Find("Character");
+            player = GameObject.FindWithTag("Player");
+            return;
         }
 
         if (player.transform.position.x > transform.position.x && facingRight == -1)
@@ -54,7 +75,7 @@ public class mosquitoScript : MonoBehaviour {
                 shootingFire = false;
                 suckedLava = false;
             }
-            closestLavaSource = GameObject.Find("lava");
+            closestLavaSource = FindClosestLavaSource();
             if (!suckedLava && (transform.position.x != closestLavaSource.transform.position.x || transform.position.y != closestLavaSource.transform.position.y + 1f))
             {
                 step = speed * Time.deltaTime;

@@ -22,6 +22,10 @@ public class egg_collision : MonoBehaviour {
 
     //Pretty self explanatory
 	void OnCollisionEnter2D (Collision2D col) {
+        if (col.gameObject.tag.Contains("Player"))
+        {
+            return;
+        }
 		if (col.gameObject.tag == "enemy" && !col.gameObject.name.Contains("ankylo")) {
 			Destroy (col.gameObject);
 			Destroy (gameObject);

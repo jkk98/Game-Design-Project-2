@@ -29,7 +29,7 @@ public class oviraptor_script : MonoBehaviour
     {
         if (!player)
         {
-            player = GameObject.Find("Character");
+            player = GameObject.FindWithTag("Player");
         }
         if (ticks % 50 == 10 && shootEgg == true)
         {

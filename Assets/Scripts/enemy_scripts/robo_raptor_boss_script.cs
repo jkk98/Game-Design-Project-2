@@ -32,7 +32,7 @@ public class robo_raptor_boss_script : MonoBehaviour {
 
         if (!player)
         {
-            player = GameObject.Find("Character");
+            player = GameObject.FindWithTag("Player");
         }
 
         //If player is nearby
@@ -135,7 +135,7 @@ public class robo_raptor_boss_script : MonoBehaviour {
                 bool slashedPlayer = Physics2D.OverlapCircle(clawSpot.position, .5f, target);
                 if (slashedPlayer)
                 {
-                    player.gameObject.GetComponent<EggScript>().damagePlayer();
+                    player.gameObject.GetComponent<healthMethods>().damagePlayer();
                     alreadySlashed = true;
                 }
 

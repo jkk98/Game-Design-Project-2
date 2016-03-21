@@ -21,7 +21,6 @@ public class egg_enemy : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D col) {
-        Debug.Log(col.gameObject.name);
         //cannonBall ignore parent
         if(gameObject.name.Contains("cannonBall") && col.gameObject.name.Contains("ankylo"))
         {
@@ -41,12 +40,11 @@ public class egg_enemy : MonoBehaviour {
         }
         //Subtract health from player
 		if (col.gameObject.name.Contains("Character")) {
-            Debug.Log("eggDamage");
-            col.gameObject.GetComponent<EggScript>().damagePlayer();
+            col.gameObject.GetComponent<healthMethods>().damagePlayer();
 			Destroy (gameObject);
 		}
         //Destroy self on any other collision
-		else if (col.gameObject.CompareTag("environment") || col.gameObject.CompareTag("floor") || 
+		else if (col.gameObject.CompareTag("environment") || col.gameObject.CompareTag("floor") || col.gameObject.CompareTag("lava") ||
 			(col.gameObject.CompareTag("enemy") && !col.gameObject.name.Contains("oviraptor")
             && !col.gameObject.name.Contains("lakitu"))) {
 			Destroy (gameObject);

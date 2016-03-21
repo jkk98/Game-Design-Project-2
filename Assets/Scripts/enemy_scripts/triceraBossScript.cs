@@ -37,7 +37,7 @@ public class triceraBossScript : MonoBehaviour {
 
         if (!player)
         {
-            player = GameObject.Find("Character");
+            player = GameObject.FindWithTag("Player");
         }
         if (activate)
         {
@@ -119,7 +119,7 @@ public class triceraBossScript : MonoBehaviour {
                     if (!chargedPlayer && Physics2D.OverlapCircle(hornArea.position, 1.0f, target))
                     {
                         chargedPlayer = true;
-                        player.GetComponent<EggScript>().damagePlayer();
+                        player.GetComponent<healthMethods>().damagePlayer();
 
                     }
                     if (ticks % 25 == 0)

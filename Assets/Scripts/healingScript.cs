@@ -3,8 +3,8 @@ using System.Collections;
 
 public class healingScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -16,7 +16,7 @@ public class healingScript : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
-            col.gameObject.GetComponent<EggScript>().healPlayer();
+            col.gameObject.GetComponent<healthMethods>().healPlayer();
             Destroy(gameObject);
         }
     }

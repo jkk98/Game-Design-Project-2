@@ -44,7 +44,7 @@ public class ankyloScript : MonoBehaviour
         }
         if (!player)
         {
-            player = GameObject.Find("Character");
+            player = GameObject.FindWithTag("Player");
         }
         //If player nearby shoot cannons
         if (player && Mathf.Abs(player.transform.position.x - transform.position.x) >= 2.0f)

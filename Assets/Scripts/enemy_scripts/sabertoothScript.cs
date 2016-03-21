@@ -39,7 +39,7 @@ public class sabertoothScript : MonoBehaviour
         }
         if (!player)
         {
-            player = GameObject.Find("Character");
+            player = GameObject.FindWithTag("Player");
         }
         //If player nearby shoot cannons
         if (player && Mathf.Abs(player.transform.position.x - transform.position.x) < 0.8f)
@@ -66,7 +66,7 @@ public class sabertoothScript : MonoBehaviour
             bool slashedPlayer = Physics2D.OverlapCircle(clawSpot.position, .1f, target);
             if (slashedPlayer)
             {
-                player.gameObject.GetComponent<EggScript>().damagePlayer();
+                player.gameObject.GetComponent<healthMethods>().damagePlayer();
                 alreadySlashed = true;
             }
         }

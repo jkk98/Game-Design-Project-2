@@ -29,7 +29,7 @@ public class buttonScriptBoss : MonoBehaviour
             if (col.gameObject.name.Contains("Character"))
             {
                 //Add hp (for now until this gets fixed) and make player jump a little
-                col.gameObject.GetComponent<EggScript>().hp += 1;
+                col.gameObject.GetComponent<healthMethods>().hp += 1;
                 col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300));
             }
             //Destroy self and subtract health from boss
