@@ -29,19 +29,33 @@ public class buttonScriptBoss : MonoBehaviour
             if (col.gameObject.name.Contains("Character"))
             {
                 //Add hp (for now until this gets fixed) and make player jump a little
-                col.gameObject.GetComponent<EggScript>().hp += 1;
+                col.gameObject.GetComponent<healthMethods>().hp += 1;
                 col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 300));
             }
             //Destroy self and subtract health from boss
 			//AudioSource audio = GetComponent<AudioSource>();
 			//audio.Play();
             Destroy(gameObject);
-            transform.parent.gameObject.GetComponent<robo_raptor_boss_script>().hp -= 1;
-            if (transform.parent.gameObject.GetComponent<robo_raptor_boss_script>().hp == 0)
+            if(transform.parent.gameObject.name.Contains("robo_raptor")) {
+                transform.parent.gameObject.GetComponent<robo_raptor_boss_script>().hp -= 1;
+                if (transform.parent.gameObject.GetComponent<robo_raptor_boss_script>().hp == 0)
+                {
+                    Debug.Log("ITS KILL!");
+                    //Destroy(transform.parent.gameObject);
+                }
+            } else if (transform.parent.gameObject.name.Contains("triceraBoss"))
             {
-                Debug.Log("ITS KILL!");
-                //Destroy(transform.parent.gameObject);
+                transform.parent.gameObject.GetComponent<triceraBossScript>().hp -= 1;
+                transform.parent.gameObject.GetComponent<triceraBossScript>().fallback = true;
+                transform.parent.gameObject.transform.position = new Vector3(transform.parent.transform.position.x, transform.parent.transform.position.y - .2f, 0);
+                if (transform.parent.gameObject.GetComponent<triceraBossScript>().hp == 0)
+                {
+                    Debug.Log("ITS KILL!");
+                    //Destroy(transform.parent.gameObject);
+                }
+
             }
+            
         }
     }
 }

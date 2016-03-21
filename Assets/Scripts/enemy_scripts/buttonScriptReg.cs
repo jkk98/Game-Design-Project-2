@@ -23,7 +23,7 @@ public class buttonScriptReg : MonoBehaviour {
                 Destroy(col.gameObject);
             }
             if(col.gameObject.name.Contains("Character")) {
-                col.gameObject.GetComponent<EggScript>().hp += 1;
+                col.gameObject.GetComponent<healthMethods>().hp += 1;
             }
             Destroy(gameObject);
             Destroy(transform.parent.gameObject);
