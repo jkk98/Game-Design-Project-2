@@ -88,9 +88,9 @@ public class carScript : MonoBehaviour {
 			if (ticks == 2800) {
 				tricera_boss.gameObject.GetComponent<triceraBossScript> ().activateBoss ();
 			}
-			//if (ticks == 3600) {
-			//	GameObject popcorn4 = Instantiate (popcorn, transform.position + (transform.right * -3f) + (transform.up * 1.5f), Quaternion.Euler (0, 0, 0)) as GameObject;
-			//}
+			if (ticks == 3600) {
+				GameObject popcorn4 = Instantiate (popcorn, transform.position + (transform.right * -3f) + (transform.up * 1.5f), Quaternion.Euler (0, 0, 0)) as GameObject;
+			}
 	
 
 		}
