@@ -113,6 +113,7 @@ public class triceraBossScript : MonoBehaviour {
                 }
                 if (ticks == 180 && hp == 0)
                 {
+                    playerProgress.hasTriceraForm = true;
                     Destroy(gameObject);
                 }
                 if(hp > 4) {

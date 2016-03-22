@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 09799518772a4dc44b7feb2c728bdc11
-timeCreated: 1458520842
+timeCreated: 1458605878
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -63,12 +63,14 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -32, y: 45}
-        - {x: -60, y: 40}
-        - {x: -60, y: -60}
-        - {x: 39, y: -60}
-        - {x: 52, y: -12}
-        - {x: 52, y: 45}
+      - - {x: -38, y: 44}
+        - {x: -60, y: 5}
+        - {x: -60, y: -59}
+        - {x: -58, y: -60}
+        - {x: 40, y: -60}
+        - {x: 52, y: -8}
+        - {x: 52, y: 35}
+        - {x: 46, y: 44}
     - name: TRexChomp_1
       rect:
         serializedVersion: 2
@@ -77,16 +79,16 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -55, y: -54}
-        - {x: 47, y: -54}
-        - {x: 58, y: -51}
-        - {x: 58, y: 34}
-        - {x: 52, y: 45}
-        - {x: -34, y: 45}
-        - {x: -55, y: 1}
+      - - {x: -55, y: -55}
+        - {x: 47, y: -55}
+        - {x: 58, y: -52}
+        - {x: 58, y: 33}
+        - {x: 52, y: 44}
+        - {x: -34, y: 44}
+        - {x: -55, y: 0}
     outline: []
   spritePackingTag: 
   userData: 

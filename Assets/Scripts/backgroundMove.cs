@@ -4,7 +4,7 @@ using System.Collections;
 public class backgroundMove : MonoBehaviour {
 
     Vector3 moveAmount;
-    float move = 40f;
+    float move = 5f;
 
 	// Use this for initialization
 	void Start () {
@@ -15,9 +15,9 @@ public class backgroundMove : MonoBehaviour {
 	void Update () {
         moveAmount.x = -move * Time.deltaTime;
         transform.Translate(moveAmount);
-        if(transform.position.x <= -100)
+        if(transform.position.x <= -30)
         {
-            transform.position = new Vector3(100, transform.position.y, transform.position.z);
+            transform.position = new Vector3(8, transform.position.y, transform.position.z);
         }
 
     }

@@ -10,9 +10,13 @@ public class playerProgress : MonoBehaviour {
     public static int hp = 10;
     //Just an arbitrary amount, don't know if we'll even use lives
     public static int lives = 3;
+    //Use this when all else is integrated
+    //public static bool hasRaptorForm;
+    //public static bool hasTriceraForm;
+    //public static bool hasTRexForm;
     public static bool hasRaptorForm = true;
     public static bool hasTriceraForm = true;
-    public static bool hasTRexForm;
+    public static bool hasTRexForm = true;
     string currentLevel;
 
     void Start()
@@ -40,6 +44,13 @@ public class playerProgress : MonoBehaviour {
             Destroy(gameObject);
             GameObject tricera = Instantiate(triceraForm, position, rotation) as GameObject;
             tricera.gameObject.GetComponent<healthMethods>().hp = currentHp;
+
+        }
+        if (to.Contains("tRex"))
+        {
+            Destroy(gameObject);
+            GameObject tRex = Instantiate(tRexForm, position, rotation) as GameObject;
+            tRex.gameObject.GetComponent<healthMethods>().hp = currentHp;
 
         }
 

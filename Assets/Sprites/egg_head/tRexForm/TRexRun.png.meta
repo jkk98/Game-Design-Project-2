@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: fc21354b6c56e6146913ef0dae529f2b
-timeCreated: 1458520922
+timeCreated: 1458605830
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,55 +59,56 @@ TextureImporter:
         x: 0
         y: 0
         width: 80
-        height: 120
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -17, y: 7}
-        - {x: -32, y: -22}
-        - {x: -32, y: -59}
-        - {x: -30, y: -60}
-        - {x: 23, y: -60}
-        - {x: 23, y: 7}
+      - - {x: -18, y: 30.5}
+        - {x: -23, y: 22.5}
+        - {x: -34, y: 1.5}
+        - {x: -34, y: -37.5}
+        - {x: 21, y: -37.5}
+        - {x: 21, y: 30.5}
     - name: TRexRun_1
       rect:
         serializedVersion: 2
         x: 80
         y: 0
         width: 80
-        height: 120
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -23, y: 8}
-        - {x: -33, y: 7}
-        - {x: -33, y: -60}
-        - {x: 15, y: -60}
-        - {x: 22, y: -27}
-        - {x: 22, y: 6}
-        - {x: 21, y: 8}
+      - - {x: -15, y: 31.5}
+        - {x: -17, y: 30.5}
+        - {x: -23, y: 23.5}
+        - {x: -35, y: -1.5}
+        - {x: -35, y: -8.5}
+        - {x: -23, y: -37.5}
+        - {x: 6, y: -37.5}
+        - {x: 20, y: -11.5}
+        - {x: 20, y: 27.5}
+        - {x: 19, y: 31.5}
     - name: TRexRun_2
       rect:
         serializedVersion: 2
         x: 160
         y: 0
         width: 80
-        height: 120
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -13, y: 7}
-        - {x: -15, y: 6}
-        - {x: -21, y: -1}
-        - {x: -33, y: -21}
-        - {x: -33, y: -48}
-        - {x: -31, y: -59}
-        - {x: -28, y: -60}
-        - {x: 22, y: -60}
-        - {x: 22, y: 7}
+      - - {x: -11, y: 30.5}
+        - {x: -17, y: 29.5}
+        - {x: -35, y: 27.5}
+        - {x: -35, y: -37.5}
+        - {x: 20, y: -37.5}
+        - {x: 20, y: 25.5}
+        - {x: 17, y: 30.5}
     outline: []
   spritePackingTag: 
   userData: 
