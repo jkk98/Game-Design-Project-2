@@ -4,11 +4,7 @@ using System.Collections;
 public class backgroundMove : MonoBehaviour {
 
     Vector3 moveAmount;
-<<<<<<< HEAD
     float move = 5f;
-=======
-    float move = 40f;
->>>>>>> origin/chris2
 
 	// Use this for initialization
 	void Start () {
