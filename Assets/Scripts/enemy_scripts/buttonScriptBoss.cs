@@ -18,7 +18,8 @@ public class buttonScriptBoss : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.name.Contains("Character") || col.gameObject.name.Contains("egg_shot"))
+        Debug.Log("HIT");
+        if (col.gameObject.name.Contains("Character") || col.gameObject.tag.Contains("heroProjectile"))
         {
             //If shot at by player
             if (col.gameObject.name.Contains("egg_shot"))
@@ -53,7 +54,16 @@ public class buttonScriptBoss : MonoBehaviour
                 }
 
             }
-            
+            else if (transform.parent.gameObject.name.Contains("tRexBoss"))
+            {
+                transform.parent.gameObject.GetComponent<tRexBossScript>().hp -= 1;
+                if (transform.parent.gameObject.GetComponent<tRexBossScript>().hp == 0)
+                {
+                    Debug.Log("ITS KILL!");
+                    //Destroy(transform.parent.gameObject);
+                }
+            }
+
         }
     }
 }

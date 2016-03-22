@@ -59,6 +59,7 @@ public class robo_raptor_boss_script : MonoBehaviour {
             }
             if (hp == 0 && ticks >= 400)
             {
+                playerProgress.hasRaptorForm = true;
                 Destroy(gameObject);
             }
             //If no button
