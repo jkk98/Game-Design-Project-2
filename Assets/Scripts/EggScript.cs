@@ -152,6 +152,8 @@ public class EggScript : MonoBehaviour {
 		anim.SetBool ("flipped", false);
 
 		if ((grounded == true || jumpedOnFalling == true) && Input.GetKeyDown (KeyCode.Space)) {
+			AudioSource audio = GetComponent<AudioSource>();
+			audio.Play();
 			anim.SetBool ("Ground", false);
 			jumpedOnFalling = false;
 			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));

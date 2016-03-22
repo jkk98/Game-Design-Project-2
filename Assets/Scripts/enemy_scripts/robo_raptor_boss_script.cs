@@ -42,7 +42,7 @@ public class robo_raptor_boss_script : MonoBehaviour {
             if (hp == 10 && transform.childCount == 1)
             {
                 Debug.Log("ACTIVATE");
-                //roar = true;
+                roar = true;
             }
             //Do kill animation if hp at 0
             if (hp == 0)
@@ -108,9 +108,11 @@ public class robo_raptor_boss_script : MonoBehaviour {
 
             }
             //Could add roaring if we wanted to
-            if (roar)
+            if (roar == true)
             {
-
+				AudioSource audio = GetComponent<AudioSource>();
+				audio.Play();
+				roar = false;
             }
             //Walk if the conditions call for it
             if (walk)
@@ -189,10 +191,12 @@ public class robo_raptor_boss_script : MonoBehaviour {
             if (player.transform.position.x > transform.position.x && facingRight == -1 )
             {
                 Flip();
+				roar = true;
             }
             else if (player.transform.position.x < transform.position.x && facingRight == 1)
             {
                 Flip();
+				roar = true;
             }
         } else
         {
